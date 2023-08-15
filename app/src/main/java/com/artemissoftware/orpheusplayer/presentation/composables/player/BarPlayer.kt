@@ -13,7 +13,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.artemissoftware.orpheusplaylist.playaudio.data.models.Audio
 import com.artemissoftware.orpheusplaylist.playaudio.presentation.composables.DummyAudio
-import com.artemissoftware.orpheusplaylist.playaudio.presentation.composables.player.MediaPlayerController
 
 @Composable
 fun BarPlayer(
