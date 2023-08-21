@@ -46,7 +46,7 @@ private fun AudioPlaylistScreenContent(
         targetValue = if (currentPlayingAudio == null) {
             0.dp
         } else {
-            56.dp
+            156.dp
         },
     )
 

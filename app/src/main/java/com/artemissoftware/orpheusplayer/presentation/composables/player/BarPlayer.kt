@@ -11,8 +11,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.artemissoftware.orpheusplaylist.playaudio.data.models.Audio
 import com.artemissoftware.orpheusplayer.presentation.composables.DummyAudio
+import com.artemissoftware.orpheusplayer.ui.theme.OrpheusPlayerTheme
+import com.artemissoftware.orpheusplaylist.playaudio.data.models.Audio
 
 @Composable
 fun BarPlayer(
@@ -52,6 +53,9 @@ fun BarPlayer(
 @Preview(showBackground = true)
 @Composable
 private fun BarPlayerPreview() {
+    OrpheusPlayerTheme {
+
+
     BarPlayer(
         progress = 50f,
         onProgressChange = {},
@@ -60,4 +64,5 @@ private fun BarPlayerPreview() {
         onStart = { },
         onNext = {},
     )
+    }
 }

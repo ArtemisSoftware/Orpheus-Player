@@ -1,6 +1,5 @@
 package com.artemissoftware.orpheusplayer.presentation.composables
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -15,10 +14,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.artemissoftware.orpheusplayer.ui.theme.OrpheusPlayerTheme
 import com.artemissoftware.orpheusplaylist.playaudio.data.models.Audio
 
 @Composable
@@ -38,28 +37,22 @@ fun AudioItem(
         Row(
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            Image(
-                modifier = Modifier.size(70.dp).weight(0.5f),
-                bitmap = audio.albumArt.asImageBitmap(),
-                contentDescription = "Cover Photo",
-            )
-
             Column(
                 modifier = Modifier
-                    .weight(0.5f)
+                    .weight(1f)
                     .padding(8.dp),
             ) {
                 Spacer(modifier = Modifier.size(4.dp))
                 Text(
                     text = audio.fileName(),
-                    style = MaterialTheme.typography.headlineMedium,
+                    style = MaterialTheme.typography.titleMedium,
                     overflow = TextOverflow.Clip,
                     maxLines = 1,
                 )
                 Spacer(modifier = Modifier.size(4.dp))
                 Text(
                     text = audio.artistName(),
-                    style = MaterialTheme.typography.displayMedium,
+                    style = MaterialTheme.typography.titleMedium,
                     maxLines = 1,
                     overflow = TextOverflow.Clip,
                     color = MaterialTheme.colorScheme.onSurface.copy(alpha = .5f),
@@ -74,8 +67,10 @@ fun AudioItem(
 @Preview(showBackground = true)
 @Composable
 private fun AudioItemPreview() {
-    AudioItem(
-        onItemClick = {},
-        audio = DummyAudio.audioList[0],
-    )
+    OrpheusPlayerTheme {
+        AudioItem(
+            onItemClick = {},
+            audio = DummyAudio.audioList[0],
+        )
+    }
 }

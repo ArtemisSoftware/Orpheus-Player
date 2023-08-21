@@ -17,8 +17,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.artemissoftware.orpheusplaylist.playaudio.data.models.Audio
 import com.artemissoftware.orpheusplayer.presentation.composables.DummyAudio
+import com.artemissoftware.orpheusplaylist.playaudio.data.models.Audio
 
 @Composable
 fun ArtistInfo(
@@ -44,7 +44,7 @@ fun ArtistInfo(
             Text(
                 text = audio.title,
                 fontWeight = FontWeight.Bold,
-                style = MaterialTheme.typography.headlineMedium,
+                style = MaterialTheme.typography.titleMedium,
                 overflow = TextOverflow.Clip,
                 modifier = Modifier.weight(1f),
                 maxLines = 1,
@@ -53,7 +53,7 @@ fun ArtistInfo(
             Text(
                 text = audio.artist,
                 fontWeight = FontWeight.Normal,
-                style = MaterialTheme.typography.displayMedium,
+                style = MaterialTheme.typography.titleMedium,
                 overflow = TextOverflow.Clip,
                 maxLines = 1,
             )
